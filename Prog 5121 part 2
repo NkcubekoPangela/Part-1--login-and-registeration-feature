@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package part.pkg2;
+
+/**
+ *
+ * @author RC_Student_lab
+ */
+public class JUnits {
+    \\ JUnit test class
+import org.junit.jupiter.api.test
+import static org.junit.jupiter.api.Assertions.*;
+
+public class EasyKanban Test {
+public void testTaskDescriptionLength() {
+assertTrue(easykanban.checkTestDescription(“This is a valid description”));
+assertFalse(easykanban.checkTestDescription(“This is an invalid description”));
+} 
+public void testCreateTaskID() {
+EasyKanban task= new EasyKanban (“Login Feature”, “create Login to authenticate users”, “Roby Harrison”, 8, “To Do”, 0);
+assertEquals(“LO:0:SON”, task.createTaskID());
+}
+public void testTotalHours() {
+Easykanban task1 = new EasyKanban(“Login Feature”, “create Login to authenticate users”, “Roby Harrison”, 8, “To Do”, 0);
+Easykanban task2 = new Easykanban(“Add Task Feature”, “Create add task feature to add task users”, “Mike Smith”, 10, “Doing ”, 1);
+EasyKanban.tasks.add(task1);
+EasyKanban.tasks.add(task2);
+assertEquals(18, EasyKanban.returnTotalHours());
+}
+public void testAdditionalTotalHours() {
+EasyKanban task1 = new EasyKanban (“Feature 1”, “Description 1”, “Dev One”,10, “To Do”, 0);
+EasyKanban task2 = new EasyKanban (“Feature 2”, “Description 2”, “Dev Two”,12, “To Do”, 1);
+EasyKanban task3 = new EasyKanban (“Feature 3”, “Description 3”, “Dev Three”,55, “To Do”, 2);
+EasyKanban task4= new EasyKanban (“Feature 4”, “Description 4”, “Dev Four”,11, “To Do”, 3);
+EasyKanban task5 = new EasyKanban (“Feature 5”, “Description 5”, “Dev Five”,1, “Doing”, 4); 
+EasyKanban.tasks.add(task1);
+EasyKanban.tasks.add(task2);
+EasyKanban.tasks.add(task3);
+EasyKanban.tasks.add(task4);
+EasyKanban.tasks.add(task5);
+assertEquals(89, EasyKanvan.returnTotalHours());
+} 
+}
+
+}
